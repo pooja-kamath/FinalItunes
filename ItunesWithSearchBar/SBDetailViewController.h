@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SBData.h"
 @interface SBDetailViewController : UIViewController
+
+//value set through prepare for segue
 @property (assign)SBData *dataToDisplay;
 @end

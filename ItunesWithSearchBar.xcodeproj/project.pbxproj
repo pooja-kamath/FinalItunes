@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		78A004F7194AE01500225286 /* SBControllerForData.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A004F6194AE01500225286 /* SBControllerForData.m */; };
 		78A004FA194AE2A300225286 /* SBControllerForDownloading.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A004F9194AE2A300225286 /* SBControllerForDownloading.m */; };
-		78A004FD194AEC6A00225286 /* SBControllerForParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A004FC194AEC6A00225286 /* SBControllerForParsing.m */; };
 		78A00500194B224C00225286 /* SBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A004FF194B224C00225286 /* SBDetailViewController.m */; };
 		78C6569C194ABC9900AA6420 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C6569B194ABC9800AA6420 /* Foundation.framework */; };
 		78C6569E194ABC9900AA6420 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C6569D194ABC9900AA6420 /* CoreGraphics.framework */; };
@@ -28,6 +27,7 @@
 		78C656D2194ABCC900AA6420 /* SBData.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C656D1194ABCC900AA6420 /* SBData.m */; };
 		78C656D8194AC16500AA6420 /* SBTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C656D7194AC16500AA6420 /* SBTableViewController.m */; };
 		78C656DB194AC21C00AA6420 /* SBTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C656DA194AC21C00AA6420 /* SBTableViewCell.m */; };
+		78CC485519518B5800F47282 /* SBControllerForParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CC485419518B5800F47282 /* SBControllerForParsing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +45,6 @@
 		78A004F6194AE01500225286 /* SBControllerForData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBControllerForData.m; sourceTree = "<group>"; };
 		78A004F8194AE2A300225286 /* SBControllerForDownloading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBControllerForDownloading.h; sourceTree = "<group>"; };
 		78A004F9194AE2A300225286 /* SBControllerForDownloading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBControllerForDownloading.m; sourceTree = "<group>"; };
-		78A004FB194AEC6A00225286 /* SBControllerForParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBControllerForParsing.h; sourceTree = "<group>"; };
-		78A004FC194AEC6A00225286 /* SBControllerForParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBControllerForParsing.m; sourceTree = "<group>"; };
 		78A004FE194B224C00225286 /* SBDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBDetailViewController.h; sourceTree = "<group>"; };
 		78A004FF194B224C00225286 /* SBDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBDetailViewController.m; sourceTree = "<group>"; };
 		78C65698194ABC9800AA6420 /* ItunesWithSearchBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesWithSearchBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +72,8 @@
 		78C656D7194AC16500AA6420 /* SBTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTableViewController.m; sourceTree = "<group>"; };
 		78C656D9194AC21C00AA6420 /* SBTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTableViewCell.h; sourceTree = "<group>"; };
 		78C656DA194AC21C00AA6420 /* SBTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTableViewCell.m; sourceTree = "<group>"; };
+		78CC485319518B5800F47282 /* SBControllerForParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBControllerForParsing.h; sourceTree = "<group>"; };
+		78CC485419518B5800F47282 /* SBControllerForParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBControllerForParsing.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,8 +205,8 @@
 				78A004F6194AE01500225286 /* SBControllerForData.m */,
 				78A004F8194AE2A300225286 /* SBControllerForDownloading.h */,
 				78A004F9194AE2A300225286 /* SBControllerForDownloading.m */,
-				78A004FB194AEC6A00225286 /* SBControllerForParsing.h */,
-				78A004FC194AEC6A00225286 /* SBControllerForParsing.m */,
+				78CC485319518B5800F47282 /* SBControllerForParsing.h */,
+				78CC485419518B5800F47282 /* SBControllerForParsing.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -313,8 +313,8 @@
 				78A004F7194AE01500225286 /* SBControllerForData.m in Sources */,
 				78C656A8194ABC9900AA6420 /* main.m in Sources */,
 				78C656B2194ABC9900AA6420 /* SBViewController.m in Sources */,
-				78A004FD194AEC6A00225286 /* SBControllerForParsing.m in Sources */,
 				78A004FA194AE2A300225286 /* SBControllerForDownloading.m in Sources */,
+				78CC485519518B5800F47282 /* SBControllerForParsing.m in Sources */,
 				78C656D2194ABCC900AA6420 /* SBData.m in Sources */,
 				78C656DB194AC21C00AA6420 /* SBTableViewCell.m in Sources */,
 				78A00500194B224C00225286 /* SBDetailViewController.m in Sources */,

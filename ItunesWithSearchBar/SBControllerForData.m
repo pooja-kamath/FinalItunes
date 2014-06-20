@@ -9,9 +9,15 @@
 #import "SBControllerForData.h"
 #import "SBData.h"
 #import "SBControllerForDownloading.h"
+
 @implementation SBControllerForData
 @synthesize  searchResults;
-+ (id)sharedManagerForData {
+
+
+//creating a singleton
++ (id)sharedManagerForData
+{
+    
     static SBControllerForData *sharedMyManagerForData = nil;
     static dispatch_once_t onceToken;
     
@@ -19,39 +25,52 @@
     
     return sharedMyManagerForData;
 }
+
 - (instancetype)init
 {
     self = [super init];
-    if (self) {
+    if (self)
+    {
+        //create the search results array
         searchResults=[[NSMutableArray alloc]init];
     }
     return self;
 }
+
 -(void)searchSongForSearchString:(NSString *)searchString
 {
-     SBControllerForDownloading *sharedManagerForDownloading= [SBControllerForDownloading sharedManagerForDownloading];
-    sharedManagerForDownloading.delegate=self;
+    //assigning self as delegate of parsing controller to save the data that has been parsed
+    SBControllerForParsing *sharedManagerForParsing= [SBControllerForParsing sharedManagerForParsing];
+    sharedManagerForParsing.delegate=self;
+    
+    //create itunes search api url
     NSString * initialStringToAppendToUrl=@"https://itunes.apple.com/search?term=";
-    NSString *finalStringToAppendToUrl=@"&entity=musicVideo&limit=40";
+    NSString *finalStringToAppendToUrl=@"&entity=musicVideo&limit=25";
     searchString=[searchString stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     NSString *searchUrl=[initialStringToAppendToUrl stringByAppendingString:searchString];
     searchUrl=[searchUrl stringByAppendingString:finalStringToAppendToUrl];
-    [[SBControllerForDownloading sharedManagerForDownloading]downloadDataWithUrl:searchUrl];
- }
-
--(SBData *)getDataAtIndex:(NSInteger)index
-{
-    return [searchResults objectAtIndex:index];
-}
--(void)saveData:(NSArray*)dataDownloaded
-{
-    [searchResults removeAllObjects];
+    
    
-    for(int i=0;i<dataDownloaded.count;i++)
-    {
-        [searchResults addObject: [dataDownloaded objectAtIndex:i]];
-    }
-    [_delegate refreshView];
+    
+    //download using the url created
+    [[SBControllerForDownloading sharedManagerForDownloading]downloadDataWithUrl:searchUrl];
+   
+}
+
+//delegate method called when the parsing is completed
+-(void)saveData:(NSArray*)parsedResultsArray
+{
+    
+    //remove the previous search results
+   [searchResults removeAllObjects];
+    
+    //add the new results to the searchResults array
+       [ searchResults addObjectsFromArray:parsedResultsArray];
+    
+    //if search results do not exsist  display a alert that there are no search results
+       //call the delegate to reload the table
+     [_delegate refreshView];
+    
 }
 
 - (void)dealloc

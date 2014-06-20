@@ -9,6 +9,7 @@
 #import "SBDetailViewController.h"
 
 @interface SBDetailViewController ()
+
 @property (retain, nonatomic) IBOutlet UIImageView *imageView;
 @property (retain, nonatomic) IBOutlet UILabel *artistLabel;
 @property (retain, nonatomic) IBOutlet UILabel *trackLabel;
@@ -45,15 +46,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    //set the label value
     _artistLabel.text=dataToDisplay.artistName;
     _trackLabel.text=dataToDisplay.trackName;
     _collectionLabel.text=dataToDisplay.collectionName;
     _GenereLabel.text=dataToDisplay.genereName;
     _countryLabel.text=dataToDisplay.country;
    
-    [_imageView setImage:dataToDisplay.image];
-    
+
+    _imageView.image=[[[UIImage alloc]initWithData:dataToDisplay.imageData]autorelease];
+   
     
 }
 - (IBAction)closeButton:(id)sender {
@@ -69,6 +71,7 @@
 
 
 - (void)dealloc {
+    
     [_imageView release];
     _imageView=nil;
     [_artistLabel release];

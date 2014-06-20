@@ -7,19 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SBControllerForDownloading.h"
 #import "SBData.h"
+#import "SBControllerForParsing.h"
+
 @protocol managerForDataDelegate
+
+//delegate to reload the table view with the search results
 -(void) refreshView;
+
 @end
 
-@interface SBControllerForData : NSObject <controllerForDownloadingDelegate>
+@interface SBControllerForData : NSObject <parseDelegate>
 
-@property (retain) NSMutableArray *searchResults;
+//array to store the search results
+@property (assign) NSMutableArray *searchResults;
 @property (assign) id delegate;
 
+
 + (id)sharedManagerForData;
+
+//method to search song using the given search string
 -(void)searchSongForSearchString:(NSString *)searchString;
--(SBData *)getDataAtIndex:(NSInteger )index;
 
 @end

@@ -13,14 +13,15 @@
 @synthesize trackNameLabel;
 @synthesize collectionNameLabel;
 @synthesize priceLabel;
-@synthesize image;
+@synthesize imageView;
+@synthesize separatorLineView;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        
-       
+        //create cell components and add it to the cell
+               [self.contentView clearsContextBeforeDrawing];
         trackNameLabel = [[UILabel alloc] initWithFrame: CGRectZero];
          collectionNameLabel.font=[UIFont fontWithName:@"TimesNewRomanPS-ItalicMT" size:14];
         [trackNameLabel setTextAlignment:NSTextAlignmentCenter];
@@ -51,36 +52,45 @@
         [artistNameLabel setTextColor: [UIColor blackColor]];
         [self addSubview:artistNameLabel];
         
-        image=[[UIImageView alloc]initWithFrame:CGRectZero];
-        [self addSubview:image];
-        
+        imageView=[[UIImageView alloc]initWithFrame:CGRectZero];
+        [self addSubview:imageView];
+    
+       separatorLineView = [[UIView alloc] initWithFrame:CGRectZero];/// change size as you need.
+        separatorLineView.backgroundColor = [UIColor grayColor];// you can also put image here
+        [self addSubview:separatorLineView];
         
         
     }
     return self;
 }
+
 -(void)layoutSubviews
 {
+    //set the frames based on orientation
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     if (UIInterfaceOrientationIsPortrait(orientation))
     {
-    [trackNameLabel setFrame:CGRectMake( 120, 5, 200, 30 )];
+        [separatorLineView setFrame:CGRectMake(5, 0, 310, 0.6)];
+           [trackNameLabel setFrame:CGRectMake( 120, 5, 200, 30 )];
     [collectionNameLabel setFrame:CGRectMake(120, 30, 200, 15)];
   
     [artistNameLabel setFrame:CGRectMake(150, 80,150, 15)];
-    [image setFrame:CGRectMake(10, 10, 100,100)];
+    [imageView setFrame:CGRectMake(10, 10, 100,100)];
     }
     else
     {
+       
+        [separatorLineView setFrame:CGRectMake(5, 0, 555, 0.6)];
         [trackNameLabel setFrame:CGRectMake( 145, 5, 400, 30 )];
         [collectionNameLabel setFrame:CGRectMake(145, 30, 400, 15)];
        
         [artistNameLabel setFrame:CGRectMake(220, 80,200, 15)];
-        [image setFrame:CGRectMake(10, 10, 130,100)];
+        [imageView setFrame:CGRectMake(10, 10, 130,100)];
     }
     
     
 }
+
 - (void)awakeFromNib
 {
     // Initialization code
@@ -94,6 +104,8 @@
 }
 - (void)dealloc
 {
+    [separatorLineView release];
+    separatorLineView=nil;
     [trackNameLabel release];
     trackNameLabel=nil;
    [collectionNameLabel release];
@@ -102,8 +114,8 @@
     priceLabel=nil;
    [artistNameLabel release];
     artistNameLabel=nil;
-    [image release];
-    image=nil;
+    [imageView release];
+    imageView=nil;
     [super dealloc];
 }
 

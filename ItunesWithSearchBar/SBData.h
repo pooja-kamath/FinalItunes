@@ -10,7 +10,7 @@
 
 @interface SBData : NSObject
 
-@property (retain) UIImage *image;
+@property (retain) NSData *imageData;
 @property (retain)NSString * trackName;
 @property (retain)NSString *collectionName;
 @property (retain)NSString *artistName;

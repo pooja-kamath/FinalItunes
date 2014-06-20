@@ -11,7 +11,7 @@
 @implementation SBData
 
 
-@synthesize  image;
+@synthesize  imageData;
 @synthesize  trackName;
 @synthesize  collectionName;
 @synthesize  artistName;
@@ -22,8 +22,8 @@
 
 - (void)dealloc
 {
-    [image release];
-    image=nil;
+    [imageData release];
+    imageData=nil;
     
     [trackName release];
     trackName=nil;

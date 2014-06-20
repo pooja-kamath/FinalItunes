@@ -8,18 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol controllerForDownloadingDelegate
-
--(void)saveData:(NSArray*)dataDownloaded;
-
-@end
 
 @interface SBControllerForDownloading : NSObject
 
 @property (assign) id delegate;
+
+//connection for downloading
 @property (retain, nonatomic) NSURLConnection *downloadConnection;
+
+//connection for storing the downloaded data
 @property (retain, nonatomic) NSMutableData *downloadedData;
 
--(void)downloadDataWithUrl:(NSString *)urlToDownload;
 + (id)sharedManagerForDownloading;
+
+//method to download using the given string
+-(void)downloadDataWithUrl:(NSString *)urlToDownload;
 @end

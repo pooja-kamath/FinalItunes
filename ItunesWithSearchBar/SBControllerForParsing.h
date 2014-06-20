@@ -8,8 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "SBData.h"
+@protocol parseDelegate
+
+-(void)saveData:(NSArray*)parsedResultsArray;
+
+@end
 @interface SBControllerForParsing : NSObject
 
+@property (assign)id delegate;
+
 + (id)sharedManagerForParsing;
--(NSMutableArray *)parseData:(NSData *)data;
+
+//method to parse the data that has been recieved
+-(void)parseData:(NSData *)data;
+
+
 @end

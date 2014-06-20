@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SBControllerForData.h"
-@interface SBTableViewController : UITableViewController <UISearchBarDelegate,UISearchDisplayDelegate>
+#import "SBControllerForDownloading.h"
+@interface SBTableViewController : UITableViewController <UISearchBarDelegate>
 
-@property (assign) SBControllerForData *sharedManagerForData;
-@property(assign) SBControllerForDownloading *sharedManagerForDownloading;
-@property (assign)UIActivityIndicatorView *activityViewIndicator;
-@property (assign)SBData *dataToDisplay;
 @end

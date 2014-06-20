@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface SBTableViewCell : UITableViewCell
+
 @property (retain, nonatomic)  UILabel *trackNameLabel;
 @property (retain, nonatomic) UILabel *collectionNameLabel;
 @property (retain, nonatomic) UILabel *priceLabel;
 @property (retain, nonatomic) UILabel *artistNameLabel;
-@property (retain,nonatomic)  UIImageView *image;
+@property (retain,nonatomic)  UIImageView *imageView;
+@property (retain,nonatomic) UIView* separatorLineView;
 @end
